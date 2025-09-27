@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <memory>
+#include "lexer.hpp"
 
 enum class NodeType {
     ASSIGN,
@@ -23,8 +24,11 @@ struct Expr {
 
 struct LiteralExpr : Expr {
     std::string value;
-    LiteralExpr(const std::string &v) : value(v) {}
+    TokenType type;   // store type (NUMBER or STRING)
+
+    LiteralExpr(const std::string &v, TokenType t) : value(v), type(t) {}
 };
+
 
 struct VarExpr : Expr {
     std::string name;
