@@ -1,0 +1,11 @@
+checklist:
+print - done
+input - done
+variables - done
+data types (int, double, string) - done
+error handling (syntax errors, undefined variables) - done/not on web
+comments (# for single line) - 
+basic arithmetic (+, -, *, /) - done
+function calls  
+control flow (if, else, while) - if else done
+advanced data types (arrays, dictionaries) - optional
