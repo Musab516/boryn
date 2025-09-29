@@ -3,7 +3,11 @@ print - done
 input - done
 variables - done
 data types (int, double, string) - done
-error handling (syntax errors, undefined variables) - done/not on web
+urinary Operations
+asci
+int and string comparators
+functions
+error handling (syntax errors, undefined variables) - done
 comments (# for single line) - 
 basic arithmetic (+, -, *, /) - done
 function calls  

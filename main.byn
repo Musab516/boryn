@@ -1,11 +1,12 @@
-say "=== Password Checker ==="
 
-let password = 123  
+say "Hello World"
 
-when password == 123:
-    say "Access Granted"
+let name = Alice
+say "Hello " + name
+
+let marks = 59
+when marks > 60:
+    say "You Passed"
 not:
-    say "Access Denied"
+    say "You Failed"
 end
-say "hello"
-say 7*8/2
