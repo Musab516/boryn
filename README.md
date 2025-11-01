@@ -1,4 +1,4 @@
-# 🔥 Boryn Programming Language
+# Boryn Programming Language
 
 A custom-built, interpreted programming language written in C++ featuring natural syntax and dynamic typing.
 
@@ -46,7 +46,10 @@ git clone https://github.com/Musab516/boryn.git
 cd boryn
 
 # Compile the interpreter
-g++ -std=c++17 main.cpp lexer.cpp parser.cpp interpreter.cpp -o boryn
+g++ -std=c++17 -Iinclude src/main.cpp src/lexer.cpp src/parser.cpp src/interpreter.cpp -o boryn
+
+# Or use the Makefile (if available)
+make
 
 # Run your first program
 ./boryn examples/hello.byn
@@ -176,21 +179,19 @@ Source Code (.byn)
 ```
 boryn/
 ├── include/              # Header files
+│   ├── ast.hpp          # AST node definitions
 │   ├── lexer.hpp        # Token definitions
-│   ├── parser.hpp       # AST node types
+│   ├── parser.hpp       # Parser interface
 │   └── interpreter.hpp  # Interpreter interface
 ├── src/                  # Source files
 │   ├── main.cpp         # Entry point
 │   ├── lexer.cpp        # Tokenization logic
 │   ├── parser.cpp       # Syntax analysis
 │   └── interpreter.cpp  # Execution engine
-├── examples/
-│   ├── hello.byn        # Hello World
-│   ├── calculator.byn   # Arithmetic demo
-│   ├── age_check.byn    # Conditional logic
-│   └── password.byn     # User interaction
 ├── README.md
 ├── Makefile             # Build automation
+├── Checklist.txt
+├── main.byn
 ├── .gitignore
 └── LICENSE
 ```
@@ -239,10 +240,16 @@ boryn/
 
 ```bash
 # Debug build
-g++ -std=c++17 -g main.cpp lexer.cpp parser.cpp interpreter.cpp -o boryn
+g++ -std=c++17 -g -Iinclude src/main.cpp src/lexer.cpp src/parser.cpp src/interpreter.cpp -o boryn
 
 # Optimized build
-g++ -std=c++17 -O3 main.cpp lexer.cpp parser.cpp interpreter.cpp -o boryn
+g++ -std=c++17 -O3 -Iinclude src/main.cpp src/lexer.cpp src/parser.cpp src/interpreter.cpp -o boryn
+
+# Or use the Makefile
+make          # Default build
+make debug    # Debug symbols
+make release  # Optimized build
+make clean    # Remove binaries
 ```
 
 ### Running Tests
